@@ -18,6 +18,26 @@ namespace Lab_rab_RakhmatullinR.I._БПИ_23_01
         }
 
 
+        public double CalculateModulus()
+        {
+            return Math.Sqrt(RealPart * RealPart + ImaginaryPart * ImaginaryPart);
+        }
+
+
+        public double CalculateArgument()
+        {
+            if (RealPart == 0 && ImaginaryPart == 0)
+                return 0;
+
+            double radians = Math.Atan2(ImaginaryPart, RealPart);
+            double degrees = radians * (180 / Math.PI);
+
+
+            if (degrees < 0)
+                degrees += 360;
+
+            return degrees;
+        }
 
     }
 }
