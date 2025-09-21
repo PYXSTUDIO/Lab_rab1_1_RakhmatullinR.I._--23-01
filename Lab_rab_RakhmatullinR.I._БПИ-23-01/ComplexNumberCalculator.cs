@@ -37,6 +37,8 @@ namespace Lab_rab_RakhmatullinR.I._БПИ_23_01
                 degrees += 360;
 
             return degrees;
+
+
         }
 
     }
