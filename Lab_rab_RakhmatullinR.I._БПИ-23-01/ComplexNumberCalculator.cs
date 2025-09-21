@@ -41,5 +41,24 @@ namespace Lab_rab_RakhmatullinR.I._БПИ_23_01
 
         }
 
+        public string GetComplexNumberString()
+        {
+            string sign = ImaginaryPart >= 0 ? "+" : "";
+            return $"{RealPart} {sign} {Math.Abs(ImaginaryPart)}i";
+        }
+
+
+        public static bool TryCreateComplexNumber(string realPartStr, string imaginaryPartStr, out ComplexNumberCalculator complexNumber)
+        {
+            complexNumber = null;
+
+            if (double.TryParse(realPartStr, out double real) && double.TryParse(imaginaryPartStr, out double imaginary))
+            {
+                complexNumber = new ComplexNumberCalculator(real, imaginary);
+                return true;
+            }
+
+            return false;
+        }
     }
 }
